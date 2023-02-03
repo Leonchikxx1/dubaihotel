@@ -1,106 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap');
+
 *{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: poppins,sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 32px;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Kiwi Maru', serif;
 }
 
-.hero{
+section{
+    padding: 70px 10%;
+}
+
+header{
+    position: fixed;
     width: 100%;
-    height: 100vh;
-    padding: 20px 10%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 100px;
+    background: #edecea;
 }
 
-nav{
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+.logo{
+    font-size: 22px;
+    font-weight: 600;
+    color: #272727;
+}
+.logo span{
+    color: #58bb6d;
+}
+.navbar{
+    position: relative;
+    display: flex;
+}
+.navbar a {
+    font-size: 16px;
+    padding: 10px 20px;
+    font-weight: 500;
+    color:#363636;
+}
+.navbar a:hover{
+    color: #58bb6d;
+}
+#menu-icon{
+    font-size: 32px;
+    cursor: pointer;
+    display: none;
 }
 
-nav .logo{
-	width: 150px;
-	cursor: pointer;
+/*home*/
+.home{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
 }
-nav .menu-img{
-	width: 50px;
-	cursor: pointer;
+.home-text h1{
+    font-size: 42px;
 }
-
-nav ul{
-	flex: 1;
-	text-align: right;
-	margin-right: 150px;
+.home-text p{
+    font-size: 16px;
+    margin: 22px 0 32px;
 }
-
-nav ul li{
-	list-style: none;
-	display: inline-block;
-	margin: 10px 30px;
+.home-text span{
+    color: #58bb6d;
 }
-
-nav ul li a{
-	text-decoration: none;
-	color: #000;
-	font-weight: 700;
-	position: relative;
-	padding: 10px;
+.btn{
+    padding: 12px 14px;
+    background: #58bb6d;
+    color: #252525;
+    border-radius: 4px;
+    font-size: 16px;
 }
-
-nav ul li a::before{
-	content: '';
-	width: 100%;
-	height: 0px;
-	background: #d9f688;
-	position: absolute;
-	z-index: -1;
-	left: 0;
-	bottom: -5px;
-	border-bottom-left-radius: 8px;
-	border-bottom-right-radius:8px;
-	transition: height 0.5s;
+.btn:hover{
+    background: #fff;
 }
 
-nav ul li a:hover::before{
-	height: 85px;
+/*shop*/
+.shop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.row{
-	display: flex;
-	flex-wrap:wrap ;
+.heading{
+    text-align: center;
+    padding: 20px 10px;
 }
 
-.col{
-	flex-basis:50%;
-	position: relative;
+.box img{
+   width: 100%;
+   height: 100%;
+   border-radius: 20px 20px;
 }
-.feature-img{
-	width: 100%;
-	margin-top: 10px;
-}
-
-.thumbnail-img{
-	width: 280px;
-	position: absolute;
-	bottom: 10px;
-	left: 0;
-	border-radius: 8px;
-	box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.1);
+.box img:hover{
+    transform: translateX(50px);
+    transition: 1s ease-in-out;
+    cursor: pointer;
 }
 
-.col h1{
-	margin-top: 180px;
-	font-size: 40px;
-	font-weight: 600;
+.bxs-cart{
+    font-size: 32px;
+    margin-left: 20px;
 }
-.col a{
-	text-decoration: none;
-	padding: 18px 50px;
-	border-radius: 30px;
-	background: #d9f688;
-	display: inline-block;
-	color: #000;
-	font-weight: 700;
-	margin-top: 70px;
-	box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.1);
+.bxs-cart:hover{
+    transform: translateX(50px);
+    transition: 1.2s ease-in-out;
+    cursor: pointer;
+}
+
+.title-price{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+}
+.title-price h3{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.box span{
+    font-size: 19px;
+    font-weight: 700;
+    padding-left: 12px;
+    color: #04b129;
+}
+.stars .bx{
+    color: #58bb6d;
+}
+.box .bx-cart{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 7px;
+    font-size: 20px;
+    border-radius: 4px 0 4px 0;
+    background: #58bb6d;
+}
+
+.new-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+    gap: 1rem;
+}
+
+.new-box img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px;
+}
+
+.new-box img:hover{
+    transform: translateY(-50px);
+    transition: 1s ease-in-out;
+    cursor: pointer;
+}
+
+.heading h2{
+    text-decoration: underline;
+    text-decoration-color: #04b129;
+}
+
+.new-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+    gap: 16px;
+    margin-top: 32px;
+}
+.new-box{
+    position: relative;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 44px 4px 4px 4px;
+}
+
+/*about*/
+
+.about{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 16px;
+}
+
+.about-img img{
+    width: 80%;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.about-text span{
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #58bb6d;
+}
+
+.about-text p{
+    font-size: 16px;
+    margin: 8px 0 20px;
+
+}
+
+/*brands*/
+.brands-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(100px,auto));
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.brands-container img{
+    width: 100px;
+    filter: grayscale(1);
+}
+.brands-container img:hover{
+    width: 100px;
+    filter: grayscale(0);
+}
+
+/*newsletter*/
+
+.newsletter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../images/hotel-3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.newsletter h2{
+    color: #363636;
+}
+
+.news-box{
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.news-box input {
+    width: 240px;
+    height: 44px;
+    border: none;
+    outline: none;
+    background: #fff;
+    padding: 10px;
+}
+
+.news-box .btn{
+    height: 44px;
+    padding: 11px;
+    border-radius: 0;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/*footer*/
+
+footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,auto));
+    gap: 16px;
+    padding: 70px 10%;
+}
+.footer h2{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.bx-phone-call{
+    font-size: 32px;
+    color: #04b129;
+    margin-left: 20px;
+}
+.phone-number{
+    color:#363636;
+    margin-top: 20px;
+    text-decoration: underline;
+    text-decoration-color: #04b129;
+}
+
+.footer-heading{
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.footer-top{
+    margin-top: 50px;
+}
+
+.footer-navbar a{
+    color: #000;
+}
+.footer-navbar a:hover{
+    color: #58bb6d;
+}
+.bx-mail-send{
+    font-size: 32px;
+    color: #b9eb07;
+    margin-left: 20px;
+}
+
+
+
+/*media responsive*/
+
+@media (max-width:991px){
+    header{
+        padding: 18px 4%;
+    }
+    section{
+        padding: 35px 4%;
+    }
+}
+
+@media (max-width:881px){
+    .home-text h1{
+        font-size: 28px;
+    }
+    .shop-container,.new-container{
+        grid-template-columns: repeat(auto-fit,minmax(218px,auto));
+    }
+}
+
+@media (max-width:768px){
+    header{
+        padding: 8px 4%;
+    }
+    #menu-icon{
+        display: initial;
+    }
+    header .navbar{
+        position: absolute;
+        top: -500px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0 4px 4px rgba(0 0 0 / 10%);
+        transition: 0.2s ease;
+        text-align: center;
+    }
+    .navbar a{
+        padding: 20px;
+        display: block;
+    }
+
+    .navbar.active{
+        top: 100%;
+    }
+    .navbar a:hover{
+        color: #58bb6d;
+    }
+    .about{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .about-img{
+        padding-top: 16px;
+        order: 2;
+    }
+}
+
+@media (max-width:491px) {
+    .home-text h1{
+        font-size:24px;
+    }
+    .shop-container,.new-container{
+        grid-template-columns: repeat(auto-fit,minmax(200px,auto));
+    }
+    .news-box input{
+        width: 180px;
+    }
+    .about-text h2{
+        font-size: 20px;
+    }
+    .about-text {
+        font-size: 14px;
+    }
 }
